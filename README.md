@@ -40,7 +40,7 @@ orbis-operations/
 
 1. **Clone the repository**
 
-git clone https://github.com/your-username/orbis-operations.git
+git clone https://github.com/d5rptr/orbis-operations.git
 
 2. **Install dependencies**
 
