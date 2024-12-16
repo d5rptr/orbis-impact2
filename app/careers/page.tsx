@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import styles from './careers.module.css';
 
 const CareerBenefit: React.FC<{ title: string; description: string; delay: number }> = ({ 
   title, 
@@ -39,6 +40,31 @@ export default function Careers() {
       description: "Enjoy flexible work arrangements and comprehensive benefits that support your wellbeing."
     }
   ];
+
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://careers-content.clearcompany.com/js/v1/career-site.js?siteId=246a2adf-896b-41b9-8cef-8e9c09fae489';
+    script.async = true;
+    script.onload = () => {
+      if (window.ClearCompanyCareerSite) {
+        window.ClearCompanyCareerSite('create', {
+          containerId: 'careers-widget-container'
+        });
+      }
+    };
+    
+    if (widgetContainerRef.current) {
+      widgetContainerRef.current.appendChild(script);
+    }
+
+    return () => {
+      if (widgetContainerRef.current) {
+        widgetContainerRef.current.removeChild(script);
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-accent to-white">
@@ -112,7 +138,7 @@ export default function Careers() {
       </motion.section>
 
       {/* Open Positions Section */}
-      <section id="careers-widget-section" className="py-20 px-4 bg-accent/50">
+      <section id="careers-widget-section" className="py-20 px-4 bg-accent/50 relative z-60">
         <div className="container mx-auto">
           <motion.h2 
             className="text-3xl md:text-4xl font-bold text-center mb-12 text-darkBlue"
@@ -120,7 +146,7 @@ export default function Careers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Career Opportunities at Orbis Operations
+            Career Opportunities at Orbis
           </motion.h2>
           
           <motion.div
@@ -130,10 +156,8 @@ export default function Careers() {
             transition={{ duration: 0.5 }}
             className="relative z-10"
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-              <p className="text-xl text-darkBlue">
-                Career opportunities coming soon. Please check back later.
-              </p>
+            <div ref={widgetContainerRef} className={`bg-white/50 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ${styles.ccCareersContainer}`}>
+              <div id="careers-widget-container"></div>
             </div>
           </motion.div>
         </div>

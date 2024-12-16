@@ -1,0 +1,63 @@
+/* Custom styles for ClearCompany Careers Widget */
+
+.ccCareersContainer.cc-careers-container {
+  /* Add custom styles here */
+}
+
+.ccCareersContainer .cc-filters-container {
+  background: #0D2E69 !important; /* Orbis dark blue */
+  border-radius: 1.125em;
+}
+
+.ccCareersContainer .cc-filters-container input,
+.ccCareersContainer .cc-filters-container select {
+  background: #F2F5FA !important; /* Light gray background */
+  color: #0D2E69 !important; /* Orbis dark blue text */
+}
+
+.ccCareersContainer .cc-filters-container .cc-submit-search-button {
+  color: #fff !important;
+  background: #1E88E5 !important; /* Orbis bright blue */
+  border: 1px solid #1E88E5 !important;
+  text-decoration: none !important;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.ccCareersContainer .cc-filters-container button.cc-reset-search-button {
+  color: #fff !important;
+}
+
+.ccCareersContainer .cc-current-page,
+.ccCareersContainer .cc-page-control:hover {
+  color: #fff !important;
+  background: #1E88E5 !important; /* Orbis bright blue */
+  border: 1px solid #1E88E5 !important;
+  text-decoration: none !important;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.ccCareersContainer .cc-job-description-container a {
+  color: #1E88E5 !important; /* Orbis bright blue links */
+  text-decoration: underline !important;
+}
+
+.ccCareersContainer .cc-job-description-container .cc-apply-button {
+  color: #fff !important;
+  background: #1E88E5 !important; /* Orbis bright blue */
+  border: 1px solid #1E88E5 !important;
+  text-decoration: none !important;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.ccCareersContainer .cc-job-description-container h3 {
+  margin: 1em 0 .25em 0 !important;
+  color: #0D2E69 !important; /* Orbis dark blue headers */
+  font-size: 1.25em !important;
+  line-height: 1.0em !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* Add more custom style rules as needed */ 

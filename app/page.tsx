@@ -88,25 +88,25 @@ export default function Home() {
     {
       title: "Commitment",
       src: "/icons/commitment.svg",
-      description: "We&apos;re dedicated to our clients&apos; missions and objectives.",
+      description: "We're dedicated to our clients' missions and objectives.",
       alt: "Commitment Icon",
     },
     {
       title: "Innovation",
       src: "/icons/innovation.svg",
-      description: "We&apos;re crafting creative and forward-leaning solutions.",
+      description: "We're crafting creative and forward-leaning solutions.",
       alt: "Innovation Icon",
     },
     {
       title: "Agility",
       src: "/icons/agility.svg",
-      description: "We&apos;re adapting to complex and evolving challenges.",
+      description: "We're adapting to complex and evolving challenges.",
       alt: "Agility Icon",
     },
     {
       title: "Integrity",
       src: "/icons/integrity.svg",
-      description: "We&apos;re upholding the highest standards in all we do.",
+      description: "We're upholding the highest standards in all we do.",
       alt: "Integrity Icon",
     },
   ];
