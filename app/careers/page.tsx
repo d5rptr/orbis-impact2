@@ -4,6 +4,12 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import styles from './careers.module.css';
 
+interface ClearCompanyWindow extends Window {
+  ClearCompanyCareerSite?: (command: string, options: { containerId: string }) => void;
+}
+
+declare const window: ClearCompanyWindow;
+
 const CareerBenefit: React.FC<{ title: string; description: string; delay: number }> = ({ 
   title, 
   description, 
@@ -55,13 +61,14 @@ export default function Careers() {
       }
     };
     
-    if (widgetContainerRef.current) {
-      widgetContainerRef.current.appendChild(script);
+    const widgetContainer = widgetContainerRef.current;
+    if (widgetContainer) {
+      widgetContainer.appendChild(script);
     }
 
     return () => {
-      if (widgetContainerRef.current) {
-        widgetContainerRef.current.removeChild(script);
+      if (widgetContainer) {
+        widgetContainer.removeChild(script);
       }
     }
   }, []);
