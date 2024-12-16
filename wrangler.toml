@@ -1,0 +1,19 @@
+name = "orbis-impact"
+type = "javascript"
+account_id = "75303e95c0cb01d345d388ddf6c7284b" # Replace with your Cloudflare account ID
+workers_dev = false
+compatibility_date = "2024-12-15"
+
+[build]
+command = "npm run build" # The command to build your project
+cwd = "."                # The directory where your project is located
+
+[env]
+# Set environment variables here if needed
+
+[pages]
+# This property tells Cloudflare Pages where to find the output files
+pages_build_output_dir = ".next" # For Next.js, use `.next`
+
+[vars]
+# Add any environment variables that your app requires

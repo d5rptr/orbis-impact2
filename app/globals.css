@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  /* Reset & Defaults */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans bg-accent text-darkBlue;
+    line-height: 1.6;
+  }
+
+  /* Improved Focus Styles */
+  :focus {
+    @apply outline-none ring-2 ring-orbitBlue ring-offset-2;
+  }
+
+  /* Typography Base */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-darkBlue font-bold;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  /* Link Styles */
+  a {
+    @apply transition-all duration-300;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Container Styles */
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Button Base */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-orbitBlue text-white hover:bg-azureBlue focus:ring-orbitBlue;
+  }
+
+  .btn-secondary {
+    @apply bg-darkBlue text-white hover:bg-orbitBlue focus:ring-darkBlue;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orbitBlue to-azureBlue;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/50 backdrop-blur-sm;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar */
+@media screen {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-darkBlue/50 rounded-full hover:bg-darkBlue/70;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
