@@ -19,20 +19,20 @@ const Card: React.FC<CardProps> = ({ title, src, description, valueAdd, alt, ind
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="bg-white shadow-lg p-6 rounded-3xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+    className="bg-white shadow-lg p-8 rounded-3xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
   >
     <Image
       src={src}
       alt={alt}
-      width={64}
-      height={64}
-      className="mx-auto mb-4"
+      width={128}
+      height={128}
+      className="mx-auto mb-6"
       loading="lazy"
     />
-    <h3 className="text-xl font-bold text-darkBlue">{title}</h3>
-    <p className="mt-2 text-gray-600">{description}</p>
+    <h3 className="text-2xl font-bold text-darkBlue mb-2">{title}</h3>
+    <p className="text-lg text-gray-600">{description}</p>
     {valueAdd && (
-      <div className="mt-4 p-4 bg-darkBlue/5 rounded-lg border border-darkBlue/10">
+      <div className="mt-6 p-4 bg-darkBlue/5 rounded-lg border border-darkBlue/10">
         <p className="font-semibold text-darkBlue">{valueAdd}</p>
       </div>
     )}
@@ -75,9 +75,11 @@ const Section: React.FC<SectionProps> = ({ bgColor, children, id }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
     id={id} 
-    className={`relative ${bgColor} py-16 md:py-24 px-6`}
+    className={`${bgColor} py-16 md:py-24 px-6 w-full`}
   >
-    {children}
+    <div className="relative">
+      {children}
+    </div>
   </motion.section>
 );
 
@@ -135,18 +137,18 @@ export default function Home() {
 
   const services = [
     {
-      title: "Search & Analysis",
+      title: "Research & Analysis",
       description:
         "Deep insights into global trends and challenges to inform decision-making.",
       valueAdd:
-        "Empowers leaders to make informed decisions with strategic foresight in complex environments.",
+        "Empowers informed decisions with strategic foresight and understanding in complex environments.",
     },
     {
-      title: "Training",
+      title: "Modern Training Programs",
       description:
-        "Customized training programs to enhance skills and operational readiness.",
+        "Modern courses that combine theory and practical application in OSINT detection, OSINT reconnaissance, influence detection using OSINT, measures of effectiveness, and creative and advanced analytic methodologies.",
       valueAdd:
-        "Improves operational readiness and skillsets critical for both national security and business resiliency.",
+        "Enhances skills and operational readiness in critical areas for national security and business resiliency.",
     },
     {
       title: "OSINT Advisory",
@@ -163,14 +165,14 @@ export default function Home() {
         "Strengthens organizational messaging to influence public perception and mitigate crises.",
     },
     {
-      title: "Consulting",
+      title: "Strategic Consulting",
       description:
         "Tailored consulting solutions to address unique challenges and objectives.",
       valueAdd:
-        "Provides tailored solutions to complex challenges, aligning actions with long-term strategies.",
+        "Aligns strategy, investments, resource allocation, human capital, and organizational structure to decisively address client goals and objectives in an effective, efficient, and enduring manner.",
     },
     {
-      title: "Data as a Service",
+      title: "Data-as-a-Service",
       description:
         "Secure and scalable solutions for real-time data access and analytics.",
       valueAdd:
@@ -179,7 +181,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="font-sans bg-gradient-to-r from-gray-900 to-gray-800 text-light min-h-screen">
+    <div className="w-full">
       {/* Hero Section */}
       <Section bgColor="bg-gradient-to-b from-darkBlue to-black text-light">
         <div className="container mx-auto min-h-[80vh] flex flex-col justify-center items-center px-6">
@@ -189,49 +191,24 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
+            <motion.h1 
+              className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wide text-orbitBlue mb-6"
+              initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
-                duration: 0.8, 
+                duration: 0.8,
                 delay: 0.2,
                 type: "spring",
-                stiffness: 100 
+                stiffness: 100
               }}
-              className="mb-8"
             >
-              <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wide text-orbitBlue mb-6"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: 0.4,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                Innovative Solutions
-              </motion.h1>
-              <motion.h2 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white/90"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: 0.6,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                for National Security and Business
-              </motion.h2>
-            </motion.div>
+              Innovative Solutions
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-2xl text-white/80 max-w-3xl mx-auto mb-12"
             >
               Orbis provides technology, consulting, and training to national
@@ -241,7 +218,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
               <motion.a
                 href="/contact"
@@ -319,7 +296,7 @@ export default function Home() {
           >
             Our Products
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {products.map((product, index) => (
               <Card
                 key={index}

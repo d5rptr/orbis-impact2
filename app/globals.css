@@ -15,11 +15,17 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
   }
 
   body {
     @apply font-sans bg-accent text-darkBlue;
     line-height: 1.6;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Improved Focus Styles */

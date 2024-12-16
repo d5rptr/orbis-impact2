@@ -1,0 +1,24 @@
+/* Expertise Page Styles */
+.advisors-section {
+    margin: 2rem 0;
+}
+
+.advisors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.advisor-item {
+    padding: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .advisors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
+
+/* Import expertise styles */
+@import 'modules/expertise.css';

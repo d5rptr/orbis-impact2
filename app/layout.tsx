@@ -76,7 +76,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <body className="min-h-screen">
+      <head>
+        <title>Orbis Operations | Innovative Solutions for National Security and Business</title>
+        <meta name="description" content="Orbis provides technology, consulting, and training to national security and business clients worldwide. Discover our innovative solutions and expert services." />
+        <meta property="og:title" content="Orbis Operations | Innovative Solutions for National Security and Business" />
+        <meta property="og:description" content="Orbis provides technology, consulting, and training to national security and business clients worldwide. Discover our innovative solutions and expert services." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.orbisops.com/" />
+        <meta property="og:image" content="https://www.orbisops.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Orbis Operations | Innovative Solutions for National Security and Business" />
+        <meta name="twitter:description" content="Orbis provides technology, consulting, and training to national security and business clients worldwide. Discover our innovative solutions and expert services." />
+        <meta name="twitter:image" content="https://www.orbisops.com/twitter-image.jpg" />
+      </head>
+      <body className="min-h-screen bg-white flex flex-col">
         {/* Header */}
         <motion.header
           className={`fixed w-full top-0 z-50 transition-all duration-300 bg-darkBlue ${
@@ -167,82 +180,69 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AnimatePresence>
         </motion.header>
 
-        {/* Main Content Wrapper */}
-        <div className="flex flex-col min-h-screen pt-[72px] md:pt-[96px]">
-          {/* Main Content */}
-          <motion.main
-            className="flex-grow"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {children}
-          </motion.main>
+        {/* Main Content */}
+        <main className="flex-grow pt-[72px] md:pt-[96px] w-full">
+          {children}
+        </main>
 
-          {/* Footer */}
-          <motion.footer
-            className="bg-darkBlue text-light py-8 px-4 md:px-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="container mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-center md:text-left">
-              <FooterSection title="Contact Us">
-                <p>
-                  <strong>Phone:</strong>{" "}
-                  <a
-                    href="tel:17036390911"
-                    className="text-orbitBlue hover:text-azureBlue transition"
-                  >
-                    1-703-639-0911
-                  </a>
-                </p>
-                <p>
-                  6862 Elm St. Ste 300 <br />
-                  McLean, VA 22101-3886
-                </p>
-              </FooterSection>
+        {/* Footer */}
+        <footer className="bg-darkBlue text-light py-8 mt-auto">
+          <div className="container mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-center md:text-left">
+            <FooterSection title="Contact Us">
+              <p>
+                <strong>Phone:</strong>{" "}
+                <a
+                  href="tel:17036390911"
+                  className="text-orbitBlue hover:text-azureBlue transition"
+                >
+                  1-703-639-0911
+                </a>
+              </p>
+              <p>
+                6862 Elm St. Ste 300 <br />
+                McLean, VA 22101-3886
+              </p>
+            </FooterSection>
 
-              <FooterSection title="Follow Us">
-                <div className="flex justify-center md:justify-start space-x-4">
-                  <a
-                    href="https://www.linkedin.com/company/orbisoperations"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-orbitBlue hover:text-azureBlue transition"
-                    aria-label="Follow us on LinkedIn"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
-              </FooterSection>
+            <FooterSection title="Follow Us">
+              <div className="flex justify-center md:justify-start space-x-4">
+                <a
+                  href="https://www.linkedin.com/company/orbisoperations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orbitBlue hover:text-azureBlue transition"
+                  aria-label="Follow us on LinkedIn"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </FooterSection>
 
-              <FooterSection title="Legal">
-                <p className="mb-2">
-                  &copy; {new Date().getFullYear()} Orbis Operations LLC. All rights reserved.
-                </p>
-                <p>
-                  Contact us:{" "}
-                  <a
-                    href="mailto:impact@orbisops.com"
-                    className="text-orbitBlue hover:text-azureBlue transition"
-                  >
-                    impact@orbisops.com
-                  </a>
-                </p>
-                <p>
-                  <Link href="/privacy" className="text-orbitBlue hover:text-azureBlue transition">
-                    Privacy Policy
-                  </Link>{" "}
-                  |{" "}
-                  <Link href="/terms" className="text-orbitBlue hover:text-azureBlue transition">
-                    Terms of Use
-                  </Link>
-                </p>
-              </FooterSection>
-            </div>
-          </motion.footer>
-        </div>
+            <FooterSection title="Legal">
+              <p className="mb-2">
+                &copy; {new Date().getFullYear()} Orbis Operations LLC. All rights reserved.
+              </p>
+              <p>
+                Contact us:{" "}
+                <a
+                  href="mailto:impact@orbisops.com"
+                  className="text-orbitBlue hover:text-azureBlue transition"
+                >
+                  impact@orbisops.com
+                </a>
+              </p>
+              <p>
+                <Link href="/privacy" className="text-orbitBlue hover:text-azureBlue transition">
+                  Privacy Policy
+                </Link>{" "}
+                |{" "}
+                <Link href="/terms" className="text-orbitBlue hover:text-azureBlue transition">
+                  Terms of Use
+                </Link>
+              </p>
+            </FooterSection>
+          </div>
+        </footer>
       </body>
     </html>
   );
