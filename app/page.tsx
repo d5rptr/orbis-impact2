@@ -86,25 +86,25 @@ export default function Home() {
     {
       title: "Commitment",
       src: "/icons/commitment.svg",
-      description: "We are dedicated to our clients' missions and objectives.",
+      description: "We&apos;re dedicated to our clients&apos; missions and objectives.",
       alt: "Commitment Icon",
     },
     {
       title: "Innovation",
       src: "/icons/innovation.svg",
-      description: "We craft creative and forward-leaning solutions.",
+      description: "We&apos;re crafting creative and forward-leaning solutions.",
       alt: "Innovation Icon",
     },
     {
       title: "Agility",
       src: "/icons/agility.svg",
-      description: "We adapt to complex and evolving challenges.",
+      description: "We&apos;re adapting to complex and evolving challenges.",
       alt: "Agility Icon",
     },
     {
       title: "Integrity",
       src: "/icons/integrity.svg",
-      description: "We uphold the highest standards in all we do.",
+      description: "We&apos;re upholding the highest standards in all we do.",
       alt: "Integrity Icon",
     },
   ];
@@ -365,7 +365,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold mb-6 text-orbitBlue"
           >
-            Ready to Face Tomorrow's Security Challenges?
+            Ready to Face Tomorrow&apos;s Security Challenges?
           </motion.h2>
           <motion.a
             href="/contact"

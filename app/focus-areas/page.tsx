@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 // Mark the page for dynamic rendering
 export const dynamic = "force-dynamic";
@@ -161,7 +160,7 @@ const FocusAreas: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Our focus areas represent the journey of data through Orbis' solutions—from integration 
+              Our focus areas represent the journey of data through Orbis&apos; solutions—from integration 
               to actionable intelligence, analytics, and strategic insights. Together, they empower 
               organizations to solve complex challenges and achieve their goals.
             </motion.p>

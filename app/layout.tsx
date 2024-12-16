@@ -79,7 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen">
         {/* Header */}
         <motion.header
-          className="fixed w-full top-0 z-50 transition-all duration-300 bg-darkBlue py-4 md:py-6"
+          className={`fixed w-full top-0 z-50 transition-all duration-300 bg-darkBlue ${
+            isScrolled ? 'py-2' : 'py-4 md:py-6'
+          }`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6 }}

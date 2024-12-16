@@ -32,7 +32,7 @@ const NotFound: React.FC = () => {
                   Page Not Found
                 </h2>
                 <p className="text-xl text-gray-300 mb-12">
-                  The page you're looking for seems to be missing. Let's get you back on track.
+                  The page you&apos;re looking for seems to be missing. Let&apos;s get you back on track.
                 </p>
               </motion.div>
             </motion.div>
